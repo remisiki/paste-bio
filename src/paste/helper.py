@@ -36,7 +36,8 @@ def match_spots_using_spatial_heuristic(
     Returns:
         Mapping of spots using a spatial heuristic.
     """
-    n1,n2=len(X),len(Y)
+    n1 = X.shape[0]
+    n2 = Y.shape[0]
     X,Y = norm_and_center_coordinates(X),norm_and_center_coordinates(Y)
     dist = scipy.spatial.distance_matrix(X,Y)
     if use_ot:
